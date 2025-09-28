@@ -1,0 +1,3 @@
+[submodule "echoes"]
+	path = echoes
+	url = https://github.com/tomwongs/echoes.git
