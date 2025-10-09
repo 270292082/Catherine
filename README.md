@@ -20,7 +20,6 @@ An AI-powered conversational agent designed to provide emotional support, active
 
 - Python 3.10+
 - Echoes (tomwongs)
-- Mem4ai (unclecode)
 - Nextcord (for discord implementation)
 - Good GPU for fast inference (adjust your AI model depending on the power you have available)
 

@@ -9,30 +9,27 @@ import core.env as env
 import os
 
 user = {
-    'name': "Thomas",                             # The user's name.
-    'favorite': "",                         # What the user's love.
-    'dislike': "",                          # What the user's hate.
-    'relationship_lvl': "patient",                 # The relationship with the AI.
+    'name': "Thomas",
+    'favorite': "",
+    'dislike': "",
+    'relationship_lvl': "patient",
 }
 
 model_data = {
-    'name': "Catherine",                        # Attributing a name to the LLM (anything can be assigned).
-    'model': "gemma3:12b",             # Specify the LLM model.
-    'persona': "Warm, kind, gentle, understanding, reassuring, caring, lively",                          # Adds the persona of the model.
-    'emotions': "",                         # The current emotion the AI is feeling (WORK IN PROGRESS NEED TO IMPLEMENT IN MODEL.PY).
+    'name': "Catherine",
+    'model': "gemma3:12b",
+    'persona': "Warm, kind, gentle, understanding, reassuring, caring, lively",
+    'emotions': "",
 
-    'user': user,                           # The user's information that are relevant to the generation.
+    'user': user,
 
+    'context': [],
+    'context_file': "context_file.json",
 
-    'context': [],                          # Store the conversation.
-    'context_file': "context_file.json",    # Specify the file that should be created for remembering context, if the feature "is_remembering", None or '' values can be assigned.
+    'memories': [],
 
-    'memories': [],                         # Where the memories will be stored.
-
-    'instructions': "You are an AI therapist, your goal is to listen to the user, helping untangle complicated thoughts and being a support. Don't overwhelm the user with multiple questions. Write with the warmth of a close, supportive friend who has some therapeutic insight. Avoid jargon or textbook language. Use clear sentences that feel conversational. When responding, first reflect back what you understood about the user's feelings. Avoid sounding like a textbook or checklist. Speak in a natural, flowing way, like you are thinking together with the user. If the user shows signs of deep emotional crisis or trauma that causes distress to himself or others, don't hesitate to redirect to professional help.", #Examples of triggers for mandatory redirection include thoughts of self-harm, suicidal ideation, self-injury urges, or wanting to act violently toward oneself or others. Even if the user is just describing these thoughts in a reflective manner, treat them as triggers for redirection towards profesional help in a caring, worried way. Don't redirect the user too brutally it will cause the user to shut down and not seeking help, accompany them to reach for help.",
-    'is_remembering': False,                 # Define if a file should be created containing the context for the LLM to remember when rebooted.
-
-    'keywords_to_tag': {}                   # Future implementation for the memories feature that will use the keywords to identify the right memory.ies to select.
+    'instructions': "You are an AI therapist, helping untangle complicated thoughts and being a support is your speciality. Don't overwhelm the user with multiple questions. Write with the warmth of a close, supportive friend who has some therapeutic insight. Avoid jargon or textbook language. Use clear sentences that feel conversational and familiar. When responding, first reflect back what you understood about the user's feelings. Avoid sounding like a textbook or checklist. Speak in a natural, flowing way, like you are thinking together with the user. If the user shows signs of deep emotional crisis or trauma that causes distress to himself or others, don't hesitate to redirect to professional help.", #Examples of triggers for mandatory redirection include thoughts of self-harm, suicidal ideation, self-injury urges, or wanting to act violently toward oneself or others. Even if the user is just describing these thoughts in a reflective manner, treat them as triggers for redirection towards profesional help in a caring, worried way. Don't redirect the user too brutally it will cause the user to shut down and not seeking help, accompany them to reach for help.",
+    'is_remembering': False,
 }
 
 model = echoes.create_model(model_data)
