@@ -9,9 +9,9 @@ class PurgeCog(commands.Cog):
 
     @nextcord.slash_command(name="clear", description="Delete my messages in this DM")
     async def clear(self, interaction: Interaction, limit: int = 200):
-        if not isinstance(interaction.channel, nextcord.DMChannel):
-            await interaction.response.send_message("❌ This only works in DMs.", ephemeral=True)
-            return
+        #if not isinstance(interaction.channel, nextcord.DMChannel):
+        #    await interaction.response.send_message("❌ This only works in DMs.", ephemeral=True)
+        #    return
 
         deleted = 0
         async for msg in interaction.channel.history(limit=limit):
@@ -19,7 +19,7 @@ class PurgeCog(commands.Cog):
                 await msg.delete()
                 deleted += 1
 
-        await interaction.response.send_message(f"🧹 Cleared {deleted} of my messages.")
+        await interaction.response.send_message(f"🧹 Cleared {deleted} of my messages.", delete_after=3.0)
 
 def setup(client):
     client.add_cog(PurgeCog(client))
