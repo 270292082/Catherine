@@ -44,6 +44,11 @@ Once the program done you have to put the api key in 'core/api.py' (create the f
 key = "[YOUR_API_KEY]"
 ```
 
+Once done you can launch the program, invite the bot to a common server and press right click and "Message" to talk in private.
+
+```
+python3 main.py
+```
 ### Privacy & Security 
 
 - By default, conversations are stored locally in data/sessions/.

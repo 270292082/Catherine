@@ -17,7 +17,7 @@ user = {
 
 model_data = {
     'name': "Catherine",
-    'model': "deepseek-r1:14b",
+    'model': "gpt-oss:20b",
     'persona': "Warm, kind, gentle, understanding, reassuring, caring, lively",
     'emotions': "",
 
